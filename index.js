@@ -77,7 +77,7 @@ document.addEventListener('DOMContentLoaded', function() {
             e.preventDefault();
             const formData = new FormData(this);
             
-            fetch('https://formspree.io/f/your-email@example.com', {
+            fetch('https://formspree.io/f/macdonaldmuhavi98@gmail.com', {
                 method: 'POST',
                 body: formData,
                 headers: {
