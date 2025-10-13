@@ -226,21 +226,21 @@
   <div class="container">
     <h2 class="heading"><i class="fas fa-folder-open"></i> Projects <span>Portfolio</span></h2>
     <div class="projects-grid">
-      <article class="project-card">
+      <article class="project-card" data-title="Project One" data-desc="A responsive web app built with HTML, CSS and JavaScript." data-img="./img/20240801031958_IMG_5666.JPG" data-tech="HTML,CSS,JS" data-link="#">
         <img src="./img/20240801031958_IMG_5666.JPG" alt="Project 1" />
         <div class="project-body">
-          <h3>Project One</h3>
+          <h3>Car Rental</h3>
           <p class="project-desc">A responsive web app built with HTML, CSS and JavaScript.</p>
           <div class="project-meta">
-            <span class="tech">HTML</span>
-            <span class="tech">CSS</span>
+            <span class="tech">React</span>
+            <span class="tech">Flask</span>
             <span class="tech">JS</span>
           </div>
-          <a class="btn" href="#" target="_blank">View</a>
+          <button class="btn view-project-btn" type="button">View</button>
         </div>
       </article>
 
-      <article class="project-card">
+      <article class="project-card" data-title="Project Two" data-desc="An interactive UI created with React and Tailwind." data-img="./img/WhatsApp_Image_2023-12-11_at_10.59.39-removebg-preview.png" data-tech="React,CSS" data-link="#">
         <img src="./img/WhatsApp_Image_2023-12-11_at_10.59.39-removebg-preview.png" alt="Project 2" />
         <div class="project-body">
           <h3>Project Two</h3>
@@ -249,11 +249,11 @@
             <span class="tech">React</span>
             <span class="tech">CSS</span>
           </div>
-          <a class="btn" href="#" target="_blank">View</a>
+          <button class="btn view-project-btn" type="button">View</button>
         </div>
       </article>
 
-      <article class="project-card">
+      <article class="project-card" data-title="Project Three" data-desc="Mobile-first app with Node.js backend and REST APIs." data-img="./img/DSC_3470.jpg" data-tech="Node.js,Express" data-link="#">
         <img src="./img/DSC_3470.jpg" alt="Project 3" />
         <div class="project-body">
           <h3>Project Three</h3>
@@ -262,22 +262,23 @@
             <span class="tech">Node.js</span>
             <span class="tech">Express</span>
           </div>
-          <a class="btn" href="#" target="_blank">View</a>
+          <button class="btn view-project-btn" type="button">View</button>
         </div>
 
       </article>
-      <article class="project-card">
-        <img src="" alt="Project 4" />
+      <article class="project-card" data-title="Project Four" data-desc="Poster." data-img="./img/perfume.jpg" data-tech="Photoshop,Indesign,Illustrator" data-link="#">
+        <img src="./img/perfume.jpg" alt="Project 4" />
         <div class="project-body">
           <h3>Project Four</h3>
-          <p class="project-desc">Poster.</p>
+          <p class="project-desc">Perfume Poster.</p>
           <div class="project-meta">
-            <span class="tech">HTML</span>
-            <span class="tech">CSS</span>
-            <span class="tech">JS</span>
+            <span class="tech">Photoshop</span>
+            <span class="tech">Indesign</span>
+            <span class="tech">Illustrator</span>
           </div>
-          <a class="btn" href="#" target="_blank">View</a>
+          <button class="btn view-project-btn" type="button">View</button>
         </div>
+      </article>
     </div>
   </div>
 </section>
@@ -288,18 +289,18 @@
   <div class="container">
     <h2 class="heading"><i class="fas fa-envelope"></i> Contact <span>Me</span></h2>
     <div class="contact-form">
-      <form id="contactForm">
+      <form id="contactForm" method="POST" action="">
         <div class="form-group">
-          <input type="text" id="name" placeholder="Your Name" required>
+          <input type="text" id="name" name="name" placeholder="Your Name" required>
         </div>
         <div class="form-group">
-          <input type="email" id="email" placeholder="Your Email" required>
+          <input type="email" id="email" name="email" placeholder="Your Email" required>
         </div>
         <div class="form-group">
-          <input type="text" id="subject" placeholder="Subject">
+          <input type="text" id="subject" name="subject" placeholder="Subject">
         </div>
         <div class="form-group">
-          <textarea id="message" rows="5" placeholder="Your Message" required></textarea>
+          <textarea id="message" name="message" rows="5" placeholder="Your Message" required></textarea>
         </div>
         <button type="submit" class="btn"><span>Send Message</span>
           <i class="fas fa-paper-plane"></i>
@@ -331,6 +332,25 @@
   </div>
 </footer>
 <!-- footer section ends -->
+
+<!-- Project detail modal (hidden by default) -->
+<div id="project-modal" class="project-modal" aria-hidden="true">
+  <div class="modal-backdrop"></div>
+  <div class="modal-dialog" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <button class="modal-close" aria-label="Close">&times;</button>
+    <div class="modal-content">
+      <div class="modal-image"><img src="" alt="" /></div>
+      <div class="modal-info">
+        <h3 id="modal-title"></h3>
+        <p id="modal-desc"></p>
+        <div id="modal-tech" class="project-meta"></div>
+        <div class="modal-actions">
+          <a id="modal-link" class="btn" href="#" target="_blank">Open Project</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
 <!-- JS Files -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script>
