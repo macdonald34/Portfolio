@@ -17,6 +17,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const modalDesc = modal && modal.querySelector('#modal-desc');
   const modalTech = modal && modal.querySelector('#modal-tech');
   const modalLink = modal && modal.querySelector('#modal-link');
+  const modalLive = modal && modal.querySelector('#modal-live');
+  const modalGithub = modal && modal.querySelector('#modal-github');
   const modalClose = modal && modal.querySelector('.modal-close');
 
   function openProjectModal(card) {
@@ -25,7 +27,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const desc = card.getAttribute('data-desc') || '';
     const img = card.getAttribute('data-img') || '';
     const tech = (card.getAttribute('data-tech') || '').split(',').filter(Boolean);
-    const link = card.getAttribute('data-link') || '#';
+  const link = card.getAttribute('data-link') || '#';
+  const live = (card.getAttribute('data-live') || '').trim();
+  const github = (card.getAttribute('data-github') || '').trim();
 
     if (modalImg) { modalImg.src = img; modalImg.alt = title; }
     if (modalTitle) modalTitle.textContent = title;
@@ -40,6 +44,14 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     }
     if (modalLink) { modalLink.href = link; }
+    if (modalLive) {
+      if (live && live !== '#') { modalLive.href = live; modalLive.style.display = ''; }
+      else { modalLive.style.display = 'none'; }
+    }
+    if (modalGithub) {
+      if (github && github !== '#') { modalGithub.href = github; modalGithub.style.display = ''; }
+      else { modalGithub.style.display = 'none'; }
+    }
 
     modal.setAttribute('aria-hidden', 'false');
     document.body.style.overflow = 'hidden';
