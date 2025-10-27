@@ -547,6 +547,31 @@ header .navbar ul li a.active::before {
   width: fit-content;
 }
 
+/* Project card action buttons (live / code) */
+.project-actions {
+  margin-top: 1.2rem;
+  display: flex;
+  gap: 0.8rem;
+}
+
+.project-actions a.card-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: .6rem;
+  padding: .6rem 1rem;
+  background: var(--light-color);
+  color: var(--dark-color);
+  border-radius: .6rem;
+  border: 1px solid rgba(0,0,0,0.06);
+  text-decoration: none;
+  font-size: 1.4rem;
+}
+
+.project-actions a.card-btn:hover {
+  background: var(--primary-color);
+  color: #fff;
+}
+
 /* Toast notifications (used by script.js) */
 #toast-container {
   position: fixed;

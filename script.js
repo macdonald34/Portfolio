@@ -70,6 +70,38 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
+  // Populate card-level action buttons (Live / GitHub) from data-live / data-github
+  document.querySelectorAll('.project-card').forEach(card => {
+    const live = (card.getAttribute('data-live') || '').trim();
+    const github = (card.getAttribute('data-github') || '').trim();
+    const actions = card.querySelector('.project-actions');
+    if (!actions) return;
+
+    // Live site button
+    if (live && live !== '#') {
+      const a = document.createElement('a');
+      a.className = 'card-btn';
+      a.href = live;
+      a.target = '_blank';
+      a.rel = 'noopener noreferrer';
+      a.textContent = 'Live';
+      a.setAttribute('aria-label', `Open live site for ${card.getAttribute('data-title') || 'project'}`);
+      actions.appendChild(a);
+    }
+
+    // GitHub button
+    if (github && github !== '#') {
+      const a = document.createElement('a');
+      a.className = 'card-btn';
+      a.href = github;
+      a.target = '_blank';
+      a.rel = 'noopener noreferrer';
+      a.textContent = 'Code';
+      a.setAttribute('aria-label', `Open GitHub repo for ${card.getAttribute('data-title') || 'project'}`);
+      actions.appendChild(a);
+    }
+  });
+
   if (modalClose) modalClose.addEventListener('click', closeProjectModal);
   if (modal) {
     modal.querySelector('.modal-backdrop').addEventListener('click', closeProjectModal);
