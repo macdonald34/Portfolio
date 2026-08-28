@@ -329,11 +329,37 @@ header {
 }
 
 /* ============================================================
-   PROJECTS / POSTERS
+   PROJECTS / POSTERS & WEB APPS
    ============================================================ */
+/* Filter Buttons */
+.filter-buttons {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+}
+
+.filter-btn {
+  padding: 10px 25px;
+  border: 2px solid #f7b731;
+  background: transparent;
+  color: #eef2fb;
+  border-radius: 30px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+  background: #f7b731;
+  color: #0b0d15;
+}
+
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
   gap: 2rem;
 }
 
@@ -345,6 +371,7 @@ header {
   transition: 0.3s;
   display: flex;
   flex-direction: column;
+  position: relative;
 }
 
 .project-card:hover {
@@ -358,6 +385,28 @@ header {
   height: 200px;
   object-fit: cover;
   background: #11141f;
+}
+
+/* Project Badges */
+.project-badge {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: bold;
+  z-index: 2;
+}
+
+.web-badge {
+  background: #4caf50;
+  color: #ffffff;
+}
+
+.poster-badge {
+  background: #f7b731;
+  color: #0b0d15;
 }
 
 .project-body {
@@ -399,6 +448,14 @@ header {
   color: #bcc3d4;
 }
 
+/* Project Actions */
+.project-actions {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 15px;
+}
+
 .view-project-btn {
   align-self: flex-start;
   background: #f7b731;
@@ -415,6 +472,45 @@ header {
 
 .view-project-btn:hover {
   background: #e0a120;
+  transform: scale(1.05);
+}
+
+.live-link,
+.github-link {
+  display: inline-block;
+  padding: 8px 15px;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.live-link {
+  background: #f7b731;
+  color: #0b0d15;
+}
+
+.github-link {
+  background: #2a2f3e;
+  color: #eef2fb;
+}
+
+.live-link:hover {
+  background: #e0a120;
+  transform: scale(1.05);
+}
+
+.github-link:hover {
+  background: #3a3f4e;
+  transform: scale(1.05);
+}
+
+.no-projects {
+  text-align: center;
+  color: #eef2fb;
+  font-size: 1.2rem;
+  padding: 40px;
+  grid-column: 1 / -1;
 }
 
 /* ============================================================
@@ -611,7 +707,7 @@ header {
 }
 
 /* ============================================================
-   PROJECT MODAL
+   PROJECT MODAL (Enhanced)
    ============================================================ */
 .project-modal {
   position: fixed;
@@ -678,6 +774,37 @@ header {
   object-fit: cover;
   border-radius: 20px;
   background: #0b0d15;
+}
+
+/* Modal Links */
+#modalLinks {
+  display: flex;
+  gap: 15px;
+  margin: 20px 0;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.modal-link {
+  padding: 12px 25px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.modal-link.live {
+  background: #f7b731;
+  color: #0b0d15;
+}
+
+.modal-link.github {
+  background: #2a2f3e;
+  color: #eef2fb;
+}
+
+.modal-link:hover {
+  transform: scale(1.05);
 }
 
 .modal-actions {
@@ -757,6 +884,28 @@ header {
   .heading {
     font-size: 2rem;
   }
+
+  .filter-buttons {
+    gap: 10px;
+  }
+  
+  .filter-btn {
+    padding: 8px 18px;
+    font-size: 0.9rem;
+  }
+  
+  .projects-grid {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  }
+
+  .project-actions {
+    justify-content: center;
+  }
+
+  .view-project-btn {
+    width: 100%;
+    text-align: center;
+  }
 }
 
 @media (max-width: 480px) {
@@ -770,5 +919,18 @@ header {
 
   .project-card img {
     height: 160px;
+  }
+
+  .filter-btn {
+    padding: 6px 14px;
+    font-size: 0.8rem;
+  }
+
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .modal-dialog {
+    padding: 1rem;
   }
 }

@@ -141,116 +141,244 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 
   // ============================================================
-  // 6. PROJECT CARDS (Posters)
+  // 6. PROJECT CARDS (Posters & Web Apps)
   // ============================================================
+  
+  // Define your posters
   const posters = [
     {
       title: 'Perfume Poster',
       desc: 'Luxury fragrance visual with rich textures and elegant typography.',
       img: 'img/perfume.jpg',
-      tech: ['Photoshop', 'InDesign']
+      tech: ['Photoshop', 'InDesign'],
+      category: 'poster'
     },
     {
       title: 'Church Poster',
       desc: 'Vibrant flyer for church',
       img: 'img/REV BOLTON.jpg',
-      tech: ['Photoshop', 'Illustrator']
+      tech: ['Photoshop', 'Illustrator'],
+      category: 'poster'
     },
     {
       title: 'Brand Mockup',
       desc: 'Coffee shop brand identity mockup with packaging design.',
-      img: 'img/brand-mockup.jpg',
-      tech: ['InDesign', 'Photoshop']
+      img: 'img/coffee shop.jpg',
+      tech: ['InDesign', 'Photoshop'],
+      category: 'poster'
     },
     {
       title: 'Social Ad',
       desc: 'Instagram campaign design for fashion brand.',
       img: 'https://via.placeholder.com/400x300/0b0d15/f7b731?text=Social+Ad',
-      tech: ['Photoshop']
+      tech: ['Photoshop'],
+      category: 'poster'
     },
     {
       title: 'Art Poster Series',
       desc: 'Minimalist exhibition posters with geometric elements.',
       img: 'https://via.placeholder.com/400x300/1e212b/e0a120?text=Art+Series',
-      tech: ['Illustrator', 'InDesign']
+      tech: ['Illustrator', 'InDesign'],
+      category: 'poster'
     },
     {
       title: 'Business Card',
       desc: 'Elegant business card design with foil accents.',
       img: 'https://via.placeholder.com/400x300/2a2f3e/e0a120?text=Card',
-      tech: ['InDesign']
+      tech: ['InDesign'],
+      category: 'poster'
     },
     {
       title: 'Burger Poster',
       desc: 'A vibrant poster for a local burger restaurant.',
       img: 'img/super burger.jpg',
-      tech: ['InDesign', 'Photoshop']
+      tech: ['InDesign', 'Photoshop'],
+      category: 'poster'
     },
     {
       title: 'Salon Poster',
       desc: 'An art Poster for a local salon.',
       img: 'img/shelines beauty.jpg',
-      tech: ['Photoshop', 'Illustrator']
+      tech: ['Photoshop', 'Illustrator'],
+      category: 'poster'
     }
   ];
 
-  const webapps = [
+  // Define your web development projects
+  const webApps = [
     {
-      title: 'Car Rental',
-      desc: 'A Fullstack web application designed for people who are looking for a cool and good place to hire cars',
-      img: 'img/carentals.jpg',
-      tech: ['React.js', 'Flask']
-
+      title: 'Car Rental System',
+      desc: 'A Fullstack web application for hiring cars with booking management and payment integration.',
+      img: 'img/carentals.png',
+      tech: ['React.js', 'Flask', 'MongoDB'],
+      category: 'web',
+      liveLink: 'https://your-car-rental-demo.com',
+      githubLink: 'https://github.com/macdonald34/RealEstate-mac.git'
+    },
+    {
+      title: 'Real-Estate Listing Platform',
+      desc: 'A complete online store with payment integration, admin dashboard, and inventory management.',
+      img: 'img/realestate.png',
+      tech: ['React.js', 'Node.js', 'Express', 'MongoDB'],
+      category: 'web',
+      liveLink: 'https://your-real-estate-demo.com',
+      githubLink: 'https://github.com/macdonald34/RealEstate-mac.git'
+    },
+    {
+      title: 'Task Manager App',
+      desc: 'A collaborative task management tool with real-time updates and team collaboration features.',
+      img: 'https://via.placeholder.com/400x300/1e212b/f7b731?text=Task+Manager',
+      tech: ['React.js', 'Firebase', 'Tailwind CSS'],
+      category: 'web',
+      liveLink: 'https://your-task-manager-demo.com',
+      githubLink: 'https://github.com/yourusername/task-manager'
+    },
+    {
+      title: 'Weather Dashboard',
+      desc: 'Real-time weather application with interactive maps, 7-day forecast, and location detection.',
+      img: 'https://via.placeholder.com/400x300/2a2f3e/f7b731?text=Weather+Dashboard',
+      tech: ['JavaScript', 'OpenWeather API', 'Chart.js'],
+      category: 'web',
+      liveLink: 'https://your-weather-dashboard.com',
+      githubLink: 'https://github.com/yourusername/weather-dashboard'
+    },
+    {
+      title: 'Chat Application',
+      desc: 'Real-time messaging app with private rooms, file sharing, and user authentication.',
+      img: 'https://via.placeholder.com/400x300/0b0d15/f7b731?text=Chat+App',
+      tech: ['Node.js', 'Socket.io', 'Express', 'MongoDB'],
+      category: 'web',
+      liveLink: 'https://your-chat-app.com',
+      githubLink: 'https://github.com/yourusername/chat-app'
+    },
+    {
+      title: 'Portfolio Builder',
+      desc: 'Drag-and-drop portfolio builder with customizable templates and live preview.',
+      img: 'https://via.placeholder.com/400x300/1e212b/f7b731?text=Portfolio+Builder',
+      tech: ['React.js', 'Redux', 'CSS3', 'Firebase'],
+      category: 'web',
+      liveLink: 'https://your-portfolio-builder.com',
+      githubLink: 'https://github.com/yourusername/portfolio-builder'
     }
+  ];
 
-  ]
+  // Combine all projects
+  const allProjects = [...posters, ...webApps];
 
   const projectsGrid = document.getElementById('projectsGrid');
   if (projectsGrid) {
-    projectsGrid.innerHTML = '';
-    posters.forEach(function(p, idx) {
-      const card = document.createElement('div');
-      card.className = 'project-card';
-      card.dataset.index = idx;
-      card.innerHTML = `
-        <img src="${p.img}" alt="${p.title}" loading="lazy">
-        <div class="project-body">
-          <h3>${p.title}</h3>
-          <p class="project-desc">${p.desc}</p>
-          <div class="project-meta">${p.tech.map(function(t) {
-            return '<span class="tech">' + t + '</span>';
-          }).join('')}</div>
-          <button class="view-project-btn" data-index="${idx}">View</button>
-        </div>
-      `;
-      projectsGrid.appendChild(card);
+    // Add category filter buttons
+    const filterContainer = document.createElement('div');
+    filterContainer.className = 'filter-buttons';
+    filterContainer.innerHTML = `
+      <button class="filter-btn active" data-filter="all">All Projects</button>
+      <button class="filter-btn" data-filter="poster">🎨 Posters</button>
+      <button class="filter-btn" data-filter="web">🌐 Web Apps</button>
+    `;
+    projectsGrid.parentNode.insertBefore(filterContainer, projectsGrid);
+
+    // Render projects function
+    function renderProjects(filter = 'all') {
+      projectsGrid.innerHTML = '';
+      const filtered = filter === 'all' 
+        ? allProjects 
+        : allProjects.filter(p => p.category === filter);
+      
+      if (filtered.length === 0) {
+        projectsGrid.innerHTML = `<p class="no-projects">No projects found in this category.</p>`;
+        return;
+      }
+
+      filtered.forEach(function(p) {
+        const card = document.createElement('div');
+        card.className = 'project-card';
+        card.dataset.category = p.category;
+        
+        // Add badge for web apps
+        const badge = p.category === 'web' 
+          ? '<span class="project-badge web-badge">🌐 Web App</span>' 
+          : '<span class="project-badge poster-badge">🎨 Poster</span>';
+        
+        // Build actions HTML
+        let actionsHTML = `<button class="view-project-btn" data-index="${allProjects.indexOf(p)}">View Details</button>`;
+        if (p.category === 'web') {
+          if (p.liveLink) {
+            actionsHTML += `<a href="${p.liveLink}" target="_blank" class="live-link">🔗 Live Demo</a>`;
+          }
+          if (p.githubLink) {
+            actionsHTML += `<a href="${p.githubLink}" target="_blank" class="github-link">💻 Code</a>`;
+          }
+        }
+        
+        card.innerHTML = `
+          <img src="${p.img}" alt="${p.title}" loading="lazy">
+          ${badge}
+          <div class="project-body">
+            <h3>${p.title}</h3>
+            <p class="project-desc">${p.desc}</p>
+            <div class="project-meta">${p.tech.map(function(t) {
+              return '<span class="tech">' + t + '</span>';
+            }).join('')}</div>
+            <div class="project-actions">
+              ${actionsHTML}
+            </div>
+          </div>
+        `;
+        projectsGrid.appendChild(card);
+      });
+    }
+
+    // Initial render
+    renderProjects('all');
+
+    // Filter button functionality
+    document.querySelectorAll('.filter-btn').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        document.querySelectorAll('.filter-btn').forEach(function(b) {
+          b.classList.remove('active');
+        });
+        this.classList.add('active');
+        renderProjects(this.dataset.filter);
+      });
     });
   }
 
   // ============================================================
-  // 7. PROJECT MODAL
+  // 7. PROJECT MODAL (Enhanced for Web Projects)
   // ============================================================
   const modal = document.getElementById('project-modal');
   const modalImg = document.getElementById('modalImg');
   const modalTitle = document.getElementById('modalTitle');
   const modalDesc = document.getElementById('modalDesc');
   const modalTech = document.getElementById('modalTech');
-  const modalLive = document.getElementById('modalLive');
-  const modalGithub = document.getElementById('modalGithub');
+  const modalLinks = document.getElementById('modalLinks');
   const modalClose = document.getElementById('modalClose');
 
   function openModal(index) {
-    const p = posters[index];
+    const p = allProjects[index];
     if (!p) return;
+    
     modalImg.src = p.img;
     modalImg.alt = p.title;
     modalTitle.textContent = p.title;
     modalDesc.textContent = p.desc;
+    
     modalTech.innerHTML = p.tech.map(function(t) {
       return '<span class="tech">' + t + '</span>';
     }).join('');
-    modalLive.href = '#';
-    modalGithub.href = '#';
+    
+    // Add links for web projects
+    if (p.category === 'web' && (p.liveLink || p.githubLink)) {
+      modalLinks.innerHTML = `
+        ${p.liveLink ? `<a href="${p.liveLink}" target="_blank" class="modal-link live">🔗 Live Demo</a>` : ''}
+        ${p.githubLink ? `<a href="${p.githubLink}" target="_blank" class="modal-link github">💻 View Code</a>` : ''}
+      `;
+      modalLinks.style.display = 'flex';
+    } else {
+      modalLinks.innerHTML = '';
+      modalLinks.style.display = 'none';
+    }
+    
     modal.classList.add('active');
     document.body.style.overflow = 'hidden';
   }
@@ -498,5 +626,8 @@ document.addEventListener('DOMContentLoaded', function() {
     console.log('  Unread: ' + storedMessages.filter(function(m) { return !m.read; }).length);
     console.log('  Read: ' + storedMessages.filter(function(m) { return m.read; }).length);
   }
+
+  console.log('%c🖥️ Web Projects: ' + webApps.length, 'font-size: 16px; color: #f7b731;');
+  console.log('%c🎨 Poster Projects: ' + posters.length, 'font-size: 16px; color: #f7b731;');
 
 }); // end DOMContentLoaded
