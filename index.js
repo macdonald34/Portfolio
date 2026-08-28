@@ -181,18 +181,29 @@ document.addEventListener('DOMContentLoaded', function() {
       tech: ['InDesign']
     },
     {
-      title: 'Magazine Layout',
-      desc: 'Editorial layout for lifestyle magazine with clean grid.',
-      img: 'https://via.placeholder.com/400x300/181c27/e0a120?text=Magazine',
+      title: 'Burger Poster',
+      desc: 'A vibrant poster for a local burger restaurant.',
+      img: 'img/super burger.jpg',
       tech: ['InDesign', 'Photoshop']
     },
     {
-      title: 'Poster Campaign',
-      desc: 'Environmental awareness posters with impactful visuals.',
-      img: 'https://via.placeholder.com/400x300/0b0d15/e0a120?text=Campaign',
+      title: 'Salon Poster',
+      desc: 'An art Poster for a local salon.',
+      img: 'img/shelines beauty.jpg',
       tech: ['Photoshop', 'Illustrator']
     }
   ];
+
+  const webapps = [
+    {
+      title: 'Car Rental',
+      desc: 'A Fullstack web application designed for people who are looking for a cool and good place to hire cars',
+      img: 'img/carentals.jpg',
+      tech: ['React.js', 'Flask']
+
+    }
+
+  ]
 
   const projectsGrid = document.getElementById('projectsGrid');
   if (projectsGrid) {
