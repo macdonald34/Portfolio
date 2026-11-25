@@ -1,242 +1,272 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="keywords" content="macdonald muhavi, portfolio, full stack dev, graphic designer" />
-  <meta name="description" content="Welcome to Macdonald Portfolio. Full-Stack Web Developer and Graphic designer" />
-  <title>Macdonald · Portfolio</title>
-  <!-- Font Awesome 6 -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-  <!-- Custom CSS -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#171915">
+  <meta name="description" content="Macdonald Muhavi is a Nairobi-based graphic designer and junior software developer creating thoughtful visual identities and functional digital experiences.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Macdonald Muhavi — Designer & Developer">
+  <meta property="og:description" content="Thoughtful visual identities. Functional digital experiences. Explore selected design and development work by Macdonald Muhavi.">
+  <meta property="og:image" content="img/macdonald-muhavi.jpg">
+  <meta property="og:url" content="https://macdonald34.github.io/Portfolio">
+  <title>Macdonald Muhavi — Graphic Designer &amp; Junior Developer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
-  <!-- Particles.js -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script>
+  <script src="index.js" defer></script>
 </head>
 <body>
+  <a class="skip-link" href="#main">Skip to content</a>
 
-  <!-- ========== NAVBAR ========== -->
-  <header>
-    <a href="/" class="logo"><i class="fas fa-code"></i> Mac_Moves</a>
-    <div id="menu" class="fas fa-bars"></div>
-    <nav class="navbar">
-      <ul>
-        <li><a class="active" href="#home">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#projects">Posters</a></li>
-        <li><a href="#webapps">Web Apps</a></li>
-        <li><a href="#education">Education</a></li>
-        <li><a href="#work">Experience</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
+  <header class="site-header">
+    <a class="wordmark" href="#home" aria-label="Macdonald Muhavi, home">
+      <span class="wordmark-mark">M<span>.</span></span>
+      <span class="wordmark-name">MACDONALD<br>MUHAVI</span>
+    </a>
+    <button class="menu-toggle" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="primary-nav">
+      <span></span><span></span>
+    </button>
+    <nav class="primary-nav" id="primary-nav" aria-label="Main navigation">
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#work">Work</a>
+      <a href="#toolbox">Toolbox</a>
+      <a href="#contact">Contact</a>
     </nav>
+    <a class="header-cta" href="#contact">Let’s talk <span aria-hidden="true">↗</span></a>
   </header>
 
-  <!-- ========== HERO ========== -->
-  <section class="home" id="home">
-    <div id="particles-js"></div>
-    <div class="content">
-      <h2>Hi, I'm <br><span>Macdonald Muhavi</span></h2>
-      <p>Full-Stack Developer &amp; Graphic Designer — crafting digital experiences and bold visuals. <span class="typing-text"></span></p>
-      <a href="#about" class="btn"><span>Explore</span> <i class="fas fa-arrow-down"></i></a>
-      <div class="socials">
-        <ul class="social-icons">
-          <li><a href="https://linkedin.com/in/macdonald-muhavi-90178928b/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a></li>
-          <li><a href="https://github.com/macdonald34" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a></li>
-          <li><a href="https://www.facebook.com/makithe.mnoma/" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a></li>
-          <li><a href="https://www.instagram.com/makithe_maky/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="image">
-      <img draggable="false" src="img/DSC_3470.jpg" alt="Macdonald Muhavi">
-    </div>
-  </section>
-
-  <!-- ========== ABOUT ========== -->
-  <section class="about section" id="about">
-    <h2 class="heading"><i class="fas fa-user-astronaut"></i> About <span>Me</span></h2>
-    <div class="row container">
-      <div class="image">
-        <img draggable="false" src="img/DSC_3470.jpg" alt="Profile">
-      </div>
-      <div class="content">
-        <h3>Macdonald Muhavi</h3>
-        <span class="tag">Full Stack Dev · Graphic Designer</span>
-        <p>Based in Nairobi, Kenya. Passionate about building web apps, creating compelling posters &amp; brand identities, and constantly exploring new tools.</p>
-        <div class="box-container">
-          <div class="box"><p><span>📧</span> macdonaldmuhavi98@gmail.com</p></div>
-          <div class="box"><p><span>📍</span> Nairobi, Kenya</p></div>
-          <div class="box"><p><span>📞</span> +254 740 940 735</p></div>
+  <main id="main">
+    <section class="hero dark-section" id="home" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <p class="eyebrow"><span class="eyebrow-line"></span> Independent creative · Nairobi, Kenya</p>
+        <h1 id="hero-title">Designing identities.<br><em>Building digital</em><br><em>experiences.</em></h1>
+        <p class="hero-intro">I’m Macdonald Muhavi, a Graphic Designer and Junior Software Developer passionate about creating meaningful visual identities and building functional digital experiences.</p>
+        <div class="hero-actions">
+          <a class="button button-lime" href="#work">Explore my work <span aria-hidden="true">↘</span></a>
+          <a class="text-link light-link" href="#contact">Let’s work together <span aria-hidden="true">↗</span></a>
         </div>
-        <div class="resumebtn">
-          <a href="./resume/Macdonald_Muhavi_CV.pdf" download target="_blank" class="btn"><span>Resume</span> <i class="fas fa-file-pdf"></i></a>
+        <p class="availability"><span class="availability-dot"></span> Available for freelance projects and opportunities</p>
+      </div>
+      <div class="hero-visual">
+        <div class="portrait-frame">
+          <img src="img/macdonald-muhavi.jpg" alt="Portrait of Macdonald Muhavi" fetchpriority="high">
+          <span class="portrait-index">01 / CREATIVE PRACTICE</span>
         </div>
+        <div class="hero-stamp" aria-hidden="true">
+          <span>DESIGN</span><span class="stamp-cross">×</span><span>DEVELOP</span>
+        </div>
+        <p class="hero-side-note">A considered blend<br>of craft and code.</p>
+      </div>
+      <span class="hero-scroll" aria-hidden="true">SCROLL TO EXPLORE <span>↓</span></span>
+    </section>
+
+    <div class="marquee" aria-label="Graphic design, brand identity, UI/UX and software development">
+      <div class="marquee-track" aria-hidden="true">
+        <span>Graphic design</span><i>✳</i><span>Brand identity</span><i>✳</i><span>UI / UX</span><i>✳</i><span>Software development</span><i>✳</i>
+        <span>Graphic design</span><i>✳</i><span>Brand identity</span><i>✳</i><span>UI / UX</span><i>✳</i><span>Software development</span><i>✳</i>
       </div>
     </div>
-  </section>
 
-  <!-- ========== SKILLS ========== -->
-  <section id="skills" class="section">
-    <div class="container">
-      <h2 class="heading"><i class="fas fa-cogs"></i> Skills <span>&amp; Tools</span></h2>
-      <div class="skills-grid">
-        <div class="skill-item"><i class="fab fa-html5"></i> HTML5</div>
-        <div class="skill-item"><i class="fab fa-css3-alt"></i> CSS3</div>
-        <div class="skill-item"><i class="fab fa-js"></i> JavaScript</div>
-        <div class="skill-item"><i class="fab fa-react"></i> React</div>
-        <div class="skill-item"><i class="fab fa-node-js"></i> Node.js</div>
-        <div class="skill-item"><i class="fas fa-database"></i> MySQL</div>
-        <div class="skill-item"><i class="fas fa-database"></i> SQL</div>
-        <div class="skill-item"><i class="fab fa-git-alt"></i> Git</div>
-        <div class="skill-item"><i class="fab fa-github"></i> GitHub</div>
-        <div class="skill-item"><i class="fab fa-flask"></i> Flask</div>
-        <div class="skill-item"><i class="fab fa-python"></i> Python</div>
-        <div class="skill-item"><i class="fas fa-mobile-alt"></i> Responsive</div>
-        <div class="skill-item"><i class="fas fa-paint-brush"></i> Graphic Design</div>
-        <div class="skill-item"><i class="fab fa-photoshop"></i> Photoshop</div>
-        <div class="skill-item"><i class="fab fa-indesign"></i> InDesign</div>
-        <div class="skill-item"><i class="fas fa-ad"></i> Illustrator</div>
-        <div class="skill-item"><i class="fas fa-canva"></i> Canva</div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ========== POSTERS / DESIGNS ========== -->
-  <section id="projects" class="section">
-    <div class="container">
-      <h2 class="heading"><i class="fas fa-palette"></i> Posters <span>&amp; Designs</span></h2>
-      <div class="projects-grid" id="projectsGrid"></div>
-    </div>
-  </section>
-
-  <!-- ========== WEB APPS ========== -->
-  <section id="webapps" class="section">
-    <div class="container">
-      <h2 class="heading"><i class="fas fa-laptop-code"></i> Web <span>Applications</span></h2>
-      <div class="projects-grid" id="webappsGrid"></div>
-    </div>
-  </section>
-
-  <!-- ========== EDUCATION ========== -->
-  <section id="education" class="section">
-    <div class="container">
-      <h2 class="heading"><i class="fas fa-graduation-cap"></i> Education <span>&amp; Certificates</span></h2>
-      <div class="timeline">
-        <div class="timeline-item"><h3>Full Stack Software Developer</h3><p><strong>Moringa School</strong> · 2023-2024</p><p>Web development, APIs, React, Node.js, Python, Flask, Javascript</p></div>
-        <div class="timeline-item"><h3>Graphic Design Certification</h3><p><strong>Inceptor School</strong> · 2024</p><p>Branding, typography, poster design, Flyer Design, Banner Design</p></div>
-        <div class="timeline-item"><h3>High School Certificate</h3><p>Friends School Senende · 2019-2022</p></div>
-        <div class="timeline-item"><h3>Primary School</h3><p>Musiri Primary · 2010-2018</p></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ========== WORK / EXPERIENCE ========== -->
-  <section id="work" class="section">
-    <div class="container">
-      <h2 class="heading"><i class="fas fa-briefcase"></i> Experience <span>&amp; Work</span></h2>
-      <div class="work-grid">
-        <div class="work-item">
-          <h3>Graphic &amp; Web Designer</h3>
-          <div class="company"><i class="fas fa-building" style="color: #f7b731; margin-right: 6px;"></i> Elona Group LTD ; 2026 - present</div>
-          <span class="duration"><i class="far fa-calendar-alt"></i> 3 months</span>
-          <ul>
-            <li>Designed corporate branding, posters, and social media assets.</li>
-            <li>Developed and maintained internal web dashboards.</li>
-            <li>Collaborated with marketing to increase engagement by 30%.</li>
-            <li>Collaborated with the design team to create visually appealing user interfaces.</li>
-            <li>Added some blog posts to the company website. </li>
-          </ul>
+    <section class="section about-section" id="about" aria-labelledby="about-title">
+      <div class="section-shell">
+        <div class="section-heading" data-reveal>
+          <p class="eyebrow eyebrow-dark"><span class="eyebrow-line"></span> A little about me</p>
+          <h2 id="about-title">Creativity meets<br><em>technology.</em></h2>
         </div>
-        <div class="work-item">
-          <h3>Graphic Designer</h3>
-          <div class="company">Freelance · 2024 – present</div>
-          <span class="duration"><i class="far fa-calendar-alt"></i> 1+ year</span>
-          <ul>
-            <li>Created posters, flyers, and mockups for hotels, churches, and small businesses.</li>
-            <li>Built a strong Behance portfolio with 15+ projects.</li>
-          </ul>
-        </div>
-        <div class="work-item">
-          <h3>Frontend Developer (Intern)</h3>
-          <div class="company">Open to opportunities</div>
-          <span class="duration"><i class="far fa-calendar-alt"></i> 2024</span>
-          <ul>
-            <li>Built responsive UI components with React &amp; Tailwind.</li>
-            <li>Collaborated with UX designers on user flows.</li>
-          </ul>
+        <div class="about-content" data-reveal>
+          <p class="about-lead">I’m a Nairobi-based Graphic Designer and Junior Software Developer with a passion for bringing visual creativity and technology together.</p>
+          <p>My journey spans graphic design, branding, UI/UX and web development. Through my training and hands-on projects, I’ve gained experience across design tools, frontend technologies, backend development and databases.</p>
+          <p>I believe good design should do more than look beautiful: it should communicate purpose, solve problems and create meaningful experiences.</p>
+          <a class="text-link dark-link" href="#contact">A project in mind? Let’s talk <span aria-hidden="true">↗</span></a>
         </div>
       </div>
-    </div>
-  </section>
+      <div class="section-shell credentials">
+        <div class="credential-column" data-reveal>
+          <p class="eyebrow eyebrow-dark">Education</p>
+          <article class="credential">
+            <span class="credential-date">SEP 2023 — JUN 2024</span>
+            <h3>Moringa School</h3>
+            <p>Software Development Certificate</p>
+          </article>
+          <article class="credential">
+            <span class="credential-date">NOV 2024 — JAN 2025</span>
+            <h3>Inceptor School</h3>
+            <p>Graphic Design Certificate</p>
+          </article>
+        </div>
+        <div class="credential-column experience-column" data-reveal>
+          <p class="eyebrow eyebrow-dark">Experience</p>
+          <article class="credential">
+            <span class="credential-date">THREE-MONTH INTERNSHIP</span>
+            <h3>Elona Group</h3>
+            <p>Graphic Design Intern</p>
+            <p class="credential-detail">Contributed to creative and digital design work as part of the team.</p>
+          </article>
+        </div>
+      </div>
+    </section>
 
-  <!-- ========== CONTACT ========== -->
-  <section id="contact" class="section">
-    <div class="container">
-      <h2 class="heading"><i class="fas fa-paper-plane"></i> Contact <span>Me</span></h2>
-      <div class="contact-form">
-        <form id="contactForm">
-          <div class="form-group">
-            <input type="text" id="contactName" name="name" placeholder="Your Name" required>
+    <section class="section services-section dark-section" id="services" aria-labelledby="services-title">
+      <div class="section-shell">
+        <div class="section-heading section-heading-light" data-reveal>
+          <p class="eyebrow"><span class="eyebrow-line"></span> What I do</p>
+          <h2 id="services-title">Ideas into<br><em>something real.</em></h2>
+          <p class="section-intro">Two complementary practices, brought together to make work that looks considered and works in the real world.</p>
+        </div>
+        <div class="service-grid">
+          <article class="service-panel" data-reveal>
+            <div class="service-topline"><span>01</span><span>VISUAL COMMUNICATION</span></div>
+            <h3>Graphic design<br><em>&amp; creative.</em></h3>
+            <p>Distinctive visual systems and thoughtful creative for brands, campaigns and digital touchpoints.</p>
+            <ul class="service-list">
+              <li>Brand identity &amp; logo design</li>
+              <li>Corporate branding &amp; company profiles</li>
+              <li>Marketing, advertising &amp; social graphics</li>
+              <li>Posters &amp; promotional materials</li>
+              <li>Business cards &amp; stationery</li>
+              <li>Packaging &amp; product design</li>
+              <li>Signage &amp; large-format design</li>
+              <li>UI / UX design</li>
+            </ul>
+          </article>
+          <article class="service-panel service-panel-accent" data-reveal>
+            <div class="service-topline"><span>02</span><span>DIGITAL EXPERIENCES</span></div>
+            <h3>Software<br><em>development.</em></h3>
+            <p>Responsive, practical web experiences built with care from interface to application logic.</p>
+            <ul class="service-list">
+              <li>Frontend &amp; responsive websites</li>
+              <li>React &amp; Next.js development</li>
+              <li>Backend development with Python &amp; Flask</li>
+              <li>API integration</li>
+              <li>Database management</li>
+              <li>Dashboard development</li>
+              <li>Full-stack web applications</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section work-section" id="work" aria-labelledby="work-title">
+      <div class="section-shell">
+        <div class="work-heading" data-reveal>
+          <div class="section-heading">
+            <p class="eyebrow eyebrow-dark"><span class="eyebrow-line"></span> Selected projects</p>
+            <h2 id="work-title">Work with<br><em>a point of view.</em></h2>
           </div>
-          <div class="form-group">
-            <input type="email" id="contactEmail" name="email" placeholder="Your Email" required>
-          </div>
-          <div class="form-group">
-            <input type="text" id="contactSubject" name="subject" placeholder="Subject">
-          </div>
-          <div class="form-group">
-            <textarea id="contactMessage" name="message" rows="5" placeholder="Message" required></textarea>
-          </div>
-          <button type="submit" class="btn" id="submitBtn"><span>Send</span> <i class="fas fa-arrow-right"></i></button>
-        </form>
+          <p class="work-note">A selection of visual design and web projects made with curiosity, clarity and care.</p>
+        </div>
+        <div class="project-filters" role="group" aria-label="Filter projects">
+          <button class="filter-button is-active" type="button" data-filter="all" aria-pressed="true">All work <span>09</span></button>
+          <button class="filter-button" type="button" data-filter="branding" aria-pressed="false">Branding &amp; identity</button>
+          <button class="filter-button" type="button" data-filter="graphic" aria-pressed="false">Graphic design</button>
+          <button class="filter-button" type="button" data-filter="uiux" aria-pressed="false">UI / UX</button>
+          <button class="filter-button" type="button" data-filter="web" aria-pressed="false">Web development</button>
+        </div>
+        <div class="projects-grid" id="projects-grid" aria-live="polite"></div>
       </div>
-      <div class="contact-info">
-        <div class="info-item"><i class="fas fa-map-pin"></i> Nairobi, Kenya</div>
-        <div class="info-item"><i class="fas fa-envelope"></i> macdonaldmuhavi98@gmail.com</div>
-        <div class="info-item"><i class="fas fa-phone-alt"></i> +254 740 940 735</div>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- ========== FOOTER ========== -->
-  <footer class="footer">
-    <div class="container">
-      <p>Made with <i class="fas fa-heart"></i> by <span style="color: #f7b731;">Macdonald Muhavi</span> · &copy; <span id="year"></span></p>
-    </div>
+    <section class="section toolbox-section" id="toolbox" aria-labelledby="toolbox-title">
+      <div class="section-shell toolbox-layout">
+        <div class="section-heading" data-reveal>
+          <p class="eyebrow eyebrow-dark"><span class="eyebrow-line"></span> The toolbox</p>
+          <h2 id="toolbox-title">Tools for<br><em>good work.</em></h2>
+          <p class="section-intro">A practical toolkit for taking ideas from first sketch to finished experience.</p>
+        </div>
+        <div class="toolbox-groups">
+          <div class="tool-group" data-reveal>
+            <h3><span>01</span> Design</h3>
+            <ul class="tool-list">
+              <li>Adobe Photoshop</li><li>Adobe Illustrator</li><li>Adobe InDesign</li><li>CorelDRAW</li><li>Figma</li><li>Canva</li>
+            </ul>
+          </div>
+          <div class="tool-group" data-reveal>
+            <h3><span>02</span> Development</h3>
+            <ul class="tool-list">
+              <li>HTML5</li><li>CSS3</li><li>JavaScript</li><li>React</li><li>Next.js</li><li>Python</li><li>Flask</li><li>Tailwind CSS</li><li>SQL</li><li>MySQL</li>
+            </ul>
+          </div>
+          <div class="tool-group" data-reveal>
+            <h3><span>03</span> Tools &amp; workflow</h3>
+            <ul class="tool-list">
+              <li>Git</li><li>GitHub</li><li>VS Code</li><li>Postman</li><li>WordPress</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact-section dark-section" id="contact" aria-labelledby="contact-title">
+      <div class="section-shell">
+        <div class="contact-heading" data-reveal>
+          <p class="eyebrow"><span class="eyebrow-line"></span> Have a project in mind?</p>
+          <h2 id="contact-title">Let’s create<br><em>something meaningful.</em></h2>
+          <p>I’m open to creative collaborations, freelance projects and software development opportunities.</p>
+        </div>
+        <div class="contact-layout">
+          <div class="contact-details" data-reveal>
+            <a class="contact-email" href="mailto:macdonaldmuhavi98@gmail.com">macdonaldmuhavi98<br>@gmail.com <span aria-hidden="true">↗</span></a>
+            <div class="contact-facts">
+              <p><span>Email</span><a href="mailto:macdonaldmuhavi98@gmail.com">macdonaldmuhavi98@gmail.com</a></p>
+              <p><span>Phone</span><a href="tel:+254740940735">+254 740 940 735</a></p>
+              <p><span>Location</span><span>Nairobi, Kenya</span></p>
+            </div>
+            <div class="social-links" aria-label="Social profiles">
+              <a href="https://github.com/macdonald34" target="_blank" rel="noreferrer">GitHub <span aria-hidden="true">↗</span></a>
+              <a href="https://linkedin.com/in/macdonald-muhavi-90178928b" target="_blank" rel="noreferrer">LinkedIn <span aria-hidden="true">↗</span></a>
+              <a href="https://behance.net/macdonaldmuhavi" target="_blank" rel="noreferrer">Behance <span aria-hidden="true">↗</span></a>
+            </div>
+          </div>
+          <form class="contact-form" id="contact-form" data-reveal>
+            <p class="form-note">A few details to get us started.</p>
+            <label for="contact-name">Your name</label>
+            <input id="contact-name" name="name" type="text" autocomplete="name" placeholder="Jane Smith" required>
+            <label for="contact-email">Email address</label>
+            <input id="contact-email" name="email" type="email" autocomplete="email" placeholder="jane@example.com" required>
+            <label for="project-type">Project type</label>
+            <select id="project-type" name="projectType" required>
+              <option value="" disabled selected>Select a project type</option>
+              <option>Branding &amp; graphic design</option>
+              <option>UI / UX design</option>
+              <option>Website development</option>
+              <option>Something else</option>
+            </select>
+            <label for="contact-message">Tell me a little about it</label>
+            <textarea id="contact-message" name="message" rows="4" placeholder="A short note about your project…" required></textarea>
+            <button class="button button-lime form-submit" type="submit">Prepare email <span aria-hidden="true">↗</span></button>
+            <p class="form-status" id="form-status" role="status" aria-live="polite">This form opens your email app; it does not send or store your message on this website.</p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <a class="wordmark footer-wordmark" href="#home">
+      <span class="wordmark-mark">M<span>.</span></span>
+      <span class="wordmark-name">MACDONALD<br>MUHAVI</span>
+    </a>
+    <p>Thoughtful design. Practical technology.</p>
+    <span>© <span id="current-year"></span> Macdonald Muhavi</span>
+    <a class="back-to-top" href="#home">Back to top ↑</a>
   </footer>
 
-  <!-- ========== TOAST NOTIFICATION ========== -->
-  <div id="toast" class="toast">
-    <i id="toastIcon" class="fas fa-check-circle"></i>
-    <span id="toastMessage">Message sent!</span>
-  </div>
-
-  <!-- ========== PROJECT MODAL ========== -->
-  <div id="project-modal" class="project-modal">
-    <div class="modal-backdrop"></div>
-    <div class="modal-dialog">
-      <button class="modal-close" id="modalClose">&times;</button>
-      <div class="modal-content">
-        <div class="modal-image">
-          <img id="modalImg" src="" alt="">
-        </div>
-        <div class="modal-info">
-          <h3 id="modalTitle" style="color: #f7b731;"></h3>
-          <p id="modalDesc"></p>
-          <div id="modalTech" class="project-meta"></div>
-          <div id="modalLinks" style="display: flex; gap: 15px; margin: 20px 0; justify-content: center; flex-wrap: wrap;"></div>
-          <div class="modal-actions">
-            <a id="modalLive" class="btn btn-outline" href="#" target="_blank">Live <i class="fas fa-external-link-alt"></i></a>
-            <a id="modalGithub" class="btn btn-outline" href="#" target="_blank">Code <i class="fab fa-github"></i></a>
-          </div>
-        </div>
+  <dialog class="project-dialog" id="project-dialog" aria-labelledby="dialog-title">
+    <div class="dialog-shell">
+      <button class="dialog-close" type="button" aria-label="Close project details">×</button>
+      <div class="dialog-image-wrap"><img id="dialog-image" src="" alt=""></div>
+      <div class="dialog-copy">
+        <p class="eyebrow eyebrow-dark" id="dialog-category"></p>
+        <h2 id="dialog-title"></h2>
+        <p id="dialog-description"></p>
+        <div class="dialog-tools" id="dialog-tools"></div>
+        <a class="text-link dark-link" id="dialog-image-link" href="#" target="_blank" rel="noreferrer">Open image <span aria-hidden="true">↗</span></a>
       </div>
     </div>
-  </div>
-
-  <!-- ========== JAVASCRIPT ========== -->
-  <script src="index.js"></script>
+  </dialog>
 </body>
 </html>
