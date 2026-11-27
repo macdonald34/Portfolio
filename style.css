@@ -1224,6 +1224,12 @@ img {
   margin-bottom: 0.8rem;
 }
 
+.project-live-link {
+  display: flex;
+  width: fit-content;
+  margin-bottom: 0.75rem;
+}
+
 [data-reveal] {
   opacity: 0;
   transform: translateY(18px);
